@@ -30,14 +30,14 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPercent = new System.Windows.Forms.TabPage();
-            this.buttonClosePerc = new System.Windows.Forms.Button();
+            this.buttonCloseTabPerc = new System.Windows.Forms.Button();
             this.textBoxPercent = new System.Windows.Forms.TextBox();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonPercentCalculate = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tabDiscount = new System.Windows.Forms.TabPage();
-            this.button5 = new System.Windows.Forms.Button();
+            this.buttonCloseTabDisc = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxDiscountMarkdown = new System.Windows.Forms.TextBox();
@@ -56,12 +56,12 @@
             this.tabControl.Margin = new System.Windows.Forms.Padding(5);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(245, 119);
+            this.tabControl.Size = new System.Drawing.Size(251, 119);
             this.tabControl.TabIndex = 28;
             // 
             // tabPercent
             // 
-            this.tabPercent.Controls.Add(this.buttonClosePerc);
+            this.tabPercent.Controls.Add(this.buttonCloseTabPerc);
             this.tabPercent.Controls.Add(this.textBoxPercent);
             this.tabPercent.Controls.Add(this.textBoxPrice);
             this.tabPercent.Controls.Add(this.label1);
@@ -70,19 +70,20 @@
             this.tabPercent.Location = new System.Drawing.Point(4, 22);
             this.tabPercent.Name = "tabPercent";
             this.tabPercent.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPercent.Size = new System.Drawing.Size(237, 93);
+            this.tabPercent.Size = new System.Drawing.Size(243, 93);
             this.tabPercent.TabIndex = 0;
             this.tabPercent.Text = "Процентная";
             this.tabPercent.UseVisualStyleBackColor = true;
             // 
-            // buttonClosePerc
+            // buttonCloseTabPerc
             // 
-            this.buttonClosePerc.Location = new System.Drawing.Point(142, 63);
-            this.buttonClosePerc.Name = "buttonClosePerc";
-            this.buttonClosePerc.Size = new System.Drawing.Size(89, 23);
-            this.buttonClosePerc.TabIndex = 34;
-            this.buttonClosePerc.Text = "Закрыть";
-            this.buttonClosePerc.UseVisualStyleBackColor = true;
+            this.buttonCloseTabPerc.Location = new System.Drawing.Point(142, 63);
+            this.buttonCloseTabPerc.Name = "buttonCloseTabPerc";
+            this.buttonCloseTabPerc.Size = new System.Drawing.Size(89, 23);
+            this.buttonCloseTabPerc.TabIndex = 34;
+            this.buttonCloseTabPerc.Text = "Закрыть";
+            this.buttonCloseTabPerc.UseVisualStyleBackColor = true;
+            this.buttonCloseTabPerc.Click += new System.EventHandler(this.buttonCloseEvent_Click);
             // 
             // textBoxPercent
             // 
@@ -90,7 +91,7 @@
             this.textBoxPercent.Name = "textBoxPercent";
             this.textBoxPercent.Size = new System.Drawing.Size(36, 20);
             this.textBoxPercent.TabIndex = 33;
-            this.textBoxPercent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPercent_KeyPress);
+            this.textBoxPercent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValidation_KeyPress);
             // 
             // textBoxPrice
             // 
@@ -98,7 +99,7 @@
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(89, 20);
             this.textBoxPrice.TabIndex = 32;
-            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPrice_KeyPress);
+            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValidation_KeyPress);
             // 
             // label1
             // 
@@ -133,7 +134,7 @@
             // 
             // tabDiscount
             // 
-            this.tabDiscount.Controls.Add(this.button5);
+            this.tabDiscount.Controls.Add(this.buttonCloseTabDisc);
             this.tabDiscount.Controls.Add(this.label7);
             this.tabDiscount.Controls.Add(this.label6);
             this.tabDiscount.Controls.Add(this.textBoxDiscountMarkdown);
@@ -142,19 +143,20 @@
             this.tabDiscount.Location = new System.Drawing.Point(4, 22);
             this.tabDiscount.Name = "tabDiscount";
             this.tabDiscount.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDiscount.Size = new System.Drawing.Size(237, 93);
+            this.tabDiscount.Size = new System.Drawing.Size(243, 93);
             this.tabDiscount.TabIndex = 1;
             this.tabDiscount.Text = "Сертификатная";
             this.tabDiscount.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // buttonCloseTabDisc
             // 
-            this.button5.Location = new System.Drawing.Point(142, 63);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(89, 23);
-            this.button5.TabIndex = 35;
-            this.button5.Text = "Закрыть";
-            this.button5.UseVisualStyleBackColor = true;
+            this.buttonCloseTabDisc.Location = new System.Drawing.Point(142, 63);
+            this.buttonCloseTabDisc.Name = "buttonCloseTabDisc";
+            this.buttonCloseTabDisc.Size = new System.Drawing.Size(89, 23);
+            this.buttonCloseTabDisc.TabIndex = 35;
+            this.buttonCloseTabDisc.Text = "Закрыть";
+            this.buttonCloseTabDisc.UseVisualStyleBackColor = true;
+            this.buttonCloseTabDisc.Click += new System.EventHandler(this.buttonCloseEvent_Click);
             // 
             // label7
             // 
@@ -182,7 +184,7 @@
             this.textBoxDiscountMarkdown.Name = "textBoxDiscountMarkdown";
             this.textBoxDiscountMarkdown.Size = new System.Drawing.Size(89, 20);
             this.textBoxDiscountMarkdown.TabIndex = 27;
-            this.textBoxDiscountMarkdown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDiscountMarkdown_KeyPress);
+            this.textBoxDiscountMarkdown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValidation_KeyPress);
             // 
             // buttonCalculate
             // 
@@ -201,16 +203,16 @@
             this.textBoxPriceDiscount.Name = "textBoxPriceDiscount";
             this.textBoxPriceDiscount.Size = new System.Drawing.Size(89, 20);
             this.textBoxPriceDiscount.TabIndex = 26;
-            this.textBoxPriceDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxPriceDiscount_KeyPress);
+            this.textBoxPriceDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValidation_KeyPress);
             // 
             // FormAddMarkdown
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(268, 138);
+            this.ClientSize = new System.Drawing.Size(277, 138);
             this.Controls.Add(this.tabControl);
             this.Name = "FormAddMarkdown";
-            this.Text = "Новая запись скидки";
+            this.Text = "Добавление скидки";
             this.tabControl.ResumeLayout(false);
             this.tabPercent.ResumeLayout(false);
             this.tabPercent.PerformLayout();
@@ -234,7 +236,7 @@
         private System.Windows.Forms.Button buttonPercentCalculate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonClosePerc;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button buttonCloseTabPerc;
+        private System.Windows.Forms.Button buttonCloseTabDisc;
     }
 }

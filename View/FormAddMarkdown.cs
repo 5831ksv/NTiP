@@ -58,6 +58,19 @@ namespace View
                 }
           */
 
+        private void textBoxValidation_KeyPress(object sender, KeyPressEventArgs e)//в один метод
+        {
+            if (!(Char.IsDigit(e.KeyChar)))
+            {
+                if (e.KeyChar != (char)Keys.Back)
+                {
+                    if (e.KeyChar != '.')
+                    {
+                        e.Handled = true;
+                    }
+                }
+            }
+        }
 
         private void textBoxPriceDiscount_KeyPress(object sender, KeyPressEventArgs e)//в один метод
         {
@@ -72,7 +85,6 @@ namespace View
                 }
             }
         }
-
         private void textBoxDiscountMarkdown_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(Char.IsDigit(e.KeyChar)))
@@ -86,6 +98,7 @@ namespace View
                 }
             }
         }
+
 
         private void buttonDiscountCalculate_Click(object sender, EventArgs e)
         {
@@ -104,6 +117,8 @@ namespace View
                   
         }
 
+        private event CancelEventHandler Closing;
+
         private void textBoxPrice_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(Char.IsDigit(e.KeyChar)))
@@ -117,7 +132,6 @@ namespace View
                 }
             }
         }
-
         private void textBoxPercent_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!(Char.IsDigit(e.KeyChar)))
@@ -131,6 +145,7 @@ namespace View
                 }
             }
         }
+
 
         private void buttonPercentCalculate_Click(object sender, EventArgs e)
         {
@@ -151,6 +166,11 @@ namespace View
             {
                 MessageBox.Show("Не все строки заполнены", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+        }
+
+        private void buttonCloseEvent_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
