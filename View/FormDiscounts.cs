@@ -21,16 +21,9 @@ namespace View
             InitializeComponent();
         }
 
-        private void percent_Click(object sender, EventArgs e)
-        {
-            FormPercent addDiscount = new FormPercent();//не по паттернам! передача таблицы в класс, а там происходит изменение и выдача изменненной таблицы на datagridupdate
-            addDiscount.DiscountList = Discount;
-            addDiscount.ShowDialog();
-        }
-
         private void sertificate_Click(object sender, EventArgs e)
         {
-            FormCertificate addDiscount = new FormCertificate();
+            FormAddMarkdown addDiscount = new FormAddMarkdown();
             addDiscount.DiscountList = Discount;
             addDiscount.ShowDialog();
         }
@@ -46,7 +39,7 @@ namespace View
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dataGridView);
                 if (Discount[i] is PercentDiscounts) { row.Cells[0].Value = "Процентная "; }
-                if (Discount[i] is CertificateDiscounts) { row.Cells[0].Value = "Сертификаты"; }
+                if (Discount[i] is CertificateDiscounts) { row.Cells[0].Value = "Сертификатная"; }
                 row.Cells[1].Value = Discount[i].ChosenDiscount;
                 row.Cells[2].Value = Discount[i].Discount;               
                 dataGridView.Rows.Add(row);

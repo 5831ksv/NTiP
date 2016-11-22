@@ -64,11 +64,11 @@
     <Compile Include="FormPercent.Designer.cs">
       <DependentUpon>FormPercent.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCertificate.cs">
+    <Compile Include="FormAddMarkdown.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCertificate.Designer.cs">
-      <DependentUpon>FormCertificate.cs</DependentUpon>
+    <Compile Include="FormAddMarkdown.Designer.cs">
+      <DependentUpon>FormAddMarkdown.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -81,8 +81,8 @@
     <EmbeddedResource Include="FormPercent.resx">
       <DependentUpon>FormPercent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCertificate.resx">
-      <DependentUpon>FormCertificate.cs</DependentUpon>
+    <EmbeddedResource Include="FormAddMarkdown.resx">
+      <DependentUpon>FormAddMarkdown.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

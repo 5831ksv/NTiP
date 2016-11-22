@@ -20,21 +20,7 @@ namespace View
         public List<IDiscounts> DiscountList { get; set; }
 
 
-/*        private void textBoxPrice1_Validadating(object sender, EventArgs e)
-        {
-            try
-            {
-                double doubleValue=0;
-                if (double.TryParse(textBoxPrice1.Text, out doubleValue)) throw new Exeption("Цена должна быть задана числом!");
-                if (doubleValue <= 0) throw new Exeption("Цена должна быть больше нуля.");
-            }
-            catch (Exeption exFCircle)
-            {
-                Console.WriteLine("{0} Exception caught.", exFCircle);
-            }
 
-        }
-  */
   
                  
         private void textBoxPrice_KeyPress(object sender, KeyPressEventArgs e)

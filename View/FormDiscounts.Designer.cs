@@ -29,16 +29,15 @@
         private void InitializeComponent()
         {
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.percent = new System.Windows.Forms.Button();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.sertificate = new System.Windows.Forms.Button();
             this.buttonLoad = new System.Windows.Forms.Button();
             this.buttonSave = new System.Windows.Forms.Button();
             this.buttonFind = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -53,37 +52,42 @@
             this.dataGridView.Location = new System.Drawing.Point(136, 12);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView.Size = new System.Drawing.Size(344, 227);
+            this.dataGridView.Size = new System.Drawing.Size(344, 193);
             this.dataGridView.TabIndex = 7;
             // 
-            // percent
+            // Column1
             // 
-            this.percent.Location = new System.Drawing.Point(3, 19);
-            this.percent.Name = "percent";
-            this.percent.Size = new System.Drawing.Size(109, 30);
-            this.percent.TabIndex = 0;
-            this.percent.Text = "Процентная";
-            this.percent.UseVisualStyleBackColor = true;
-            this.percent.Click += new System.EventHandler(this.percent_Click);
+            this.Column1.HeaderText = "Тип скидки";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Значение скидки";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Конечная стоимость";
+            this.Column3.Name = "Column3";
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.sertificate);
-            this.groupBox1.Controls.Add(this.percent);
+            this.groupBox1.Controls.Add(this.buttonDelete);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(118, 91);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Тип скидки";
+            this.groupBox1.Text = "Скидка";
             // 
             // sertificate
             // 
-            this.sertificate.Location = new System.Drawing.Point(3, 55);
+            this.sertificate.Location = new System.Drawing.Point(3, 19);
             this.sertificate.Name = "sertificate";
             this.sertificate.Size = new System.Drawing.Size(109, 30);
             this.sertificate.TabIndex = 1;
-            this.sertificate.Text = "Сертификатная";
+            this.sertificate.Text = "Добавить";
             this.sertificate.UseVisualStyleBackColor = true;
             this.sertificate.Click += new System.EventHandler(this.sertificate_Click);
             // 
@@ -119,7 +123,7 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(12, 211);
+            this.buttonDelete.Location = new System.Drawing.Point(3, 55);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(112, 28);
             this.buttonDelete.TabIndex = 9;
@@ -127,32 +131,16 @@
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Тип скидки";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Значение скидки";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Конечная стоимость";
-            this.Column3.Name = "Column3";
-            // 
             // FormDiscounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(499, 265);
+            this.ClientSize = new System.Drawing.Size(499, 216);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonLoad);
             this.Controls.Add(this.buttonSave);
             this.Controls.Add(this.buttonFind);
-            this.Controls.Add(this.buttonDelete);
             this.Name = "FormDiscounts";
             this.Text = "FormDiscounts";
             this.Activated += new System.EventHandler(this.FormDiscounts_Activated);
@@ -165,7 +153,6 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.Button percent;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button sertificate;
         private System.Windows.Forms.Button buttonLoad;
