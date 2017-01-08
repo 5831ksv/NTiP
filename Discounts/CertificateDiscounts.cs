@@ -10,37 +10,44 @@ namespace Model
     public class CertificateDiscounts : IDiscounts
     {
         private double _costOfGoods;
-        public double _chosenDiscount;
-        public double summa;
+        private double _chosenDiscount;
+        private double _summa;
 
-       
+
 
         public CertificateDiscounts(double _costOfGoods, double _chosenDiscount)
         {
-          
+
+            if (_costOfGoods < 0)
+
+                throw new ArgumentException("Должно быть больше нуля", "_costOfGoods");
+
             if (_chosenDiscount < 0)
+
                 throw new ArgumentException("Должно быть больше нуля", "_chosenDiscount");
 
             this._chosenDiscount = _chosenDiscount;
             this._costOfGoods = _costOfGoods;
+
             if ((_costOfGoods - _chosenDiscount) < 0)
             {
-                _costOfGoods = 0;
+                _summa = 0;
             }
-            else
-            {
-                summa = _costOfGoods - _chosenDiscount;
-            }
+           else
+               {
+                _summa = _costOfGoods - _chosenDiscount;
+               }
+
         }
 
-        public double Discount//делать проще
+        public double Discount
         {
 
             get
             {
-                return summa;
+                return _summa;
             }
-                
+
         }
 
         public double ChosenDiscount
@@ -50,7 +57,15 @@ namespace Model
                 return _chosenDiscount;
             }
         }
-       
+
+        public string TypeDiscount
+        {
+            get
+            {
+                return "Certificate";
+            }
+        }
+
     }
 }
 

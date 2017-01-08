@@ -9,7 +9,9 @@ namespace Model
     public interface IDiscounts
     {
         double Discount { get; }
+
         double ChosenDiscount { get; }
-        //название
+
+        string TypeDiscount { get; }
     }
 }

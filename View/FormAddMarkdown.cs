@@ -58,47 +58,17 @@ namespace View
                 }
           */
 
-        private void textBoxValidation_KeyPress(object sender, KeyPressEventArgs e)//в один метод
+        private void textBoxValidation_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!(Char.IsDigit(e.KeyChar)))
+            if (Char.IsDigit(e.KeyChar)) return;
+            if (e.KeyChar != (char)Keys.Back)
             {
-                if (e.KeyChar != (char)Keys.Back)
+                if (e.KeyChar != '.')
                 {
-                    if (e.KeyChar != '.')
-                    {
-                        e.Handled = true;
-                    }
+                    e.Handled = true;
                 }
             }
         }
-
-        private void textBoxPriceDiscount_KeyPress(object sender, KeyPressEventArgs e)//в один метод
-        {
-            if (!(Char.IsDigit(e.KeyChar)))
-            {
-                if (e.KeyChar != (char)Keys.Back)
-                {
-                    if (e.KeyChar != '.')
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-        private void textBoxDiscountMarkdown_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!(Char.IsDigit(e.KeyChar)))
-            {
-                if (e.KeyChar != (char)Keys.Back)
-                {
-                    if (e.KeyChar != '.')
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
 
         private void buttonDiscountCalculate_Click(object sender, EventArgs e)
         {
@@ -112,60 +82,43 @@ namespace View
             }
             catch (FormatException)
             {
-                MessageBox.Show("Не все строки заполнены", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show(@"Не все строки заполнены", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
                   
         }
-
-        private event CancelEventHandler Closing;
-
-        private void textBoxPrice_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!(Char.IsDigit(e.KeyChar)))
-            {
-                if (e.KeyChar != (char)Keys.Back)
-                {
-                    if (e.KeyChar != '.')
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-        private void textBoxPercent_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!(Char.IsDigit(e.KeyChar)))
-            {
-                if (e.KeyChar != (char)Keys.Back)
-                {
-                    if (e.KeyChar != '.')
-                    {
-                        e.Handled = true;
-                    }
-                }
-            }
-        }
-
 
         private void buttonPercentCalculate_Click(object sender, EventArgs e)
         {
             try
             {
+                
                 double doubleValuePrice = Convert.ToDouble(textBoxPrice.Text.Replace(".", ","));
 
                 double doubleValuePercentTemp = Convert.ToDouble(textBoxPercent.Text.Replace(".", ","));
                 double doubleValuePercent = (doubleValuePercentTemp/100);
+                if (doubleValuePercent < 0 || doubleValuePercent > 1)
 
+                {
+                    MessageBox.Show(@"Значение процентной скидки принимает значени я от 0 до 100", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
 
-                PercentDiscounts percent = new PercentDiscounts(doubleValuePrice, doubleValuePercent);
-                DiscountList.Add(percent);
-                Close();
+                else
+
+                {
+                    PercentDiscounts percent = new PercentDiscounts(doubleValuePrice, doubleValuePercent);
+                    DiscountList.Add(percent);
+                    Close();
+                }
+                
             }
 
             catch (System.FormatException)
             {
-                MessageBox.Show("Не все строки заполнены", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                MessageBox.Show(@"Не все строки заполнены", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
+
+
+
         }
 
         private void buttonCloseEvent_Click(object sender, EventArgs e)

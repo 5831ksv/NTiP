@@ -125,7 +125,7 @@
             // 
             this.buttonDelete.Location = new System.Drawing.Point(3, 55);
             this.buttonDelete.Name = "buttonDelete";
-            this.buttonDelete.Size = new System.Drawing.Size(112, 28);
+            this.buttonDelete.Size = new System.Drawing.Size(109, 28);
             this.buttonDelete.TabIndex = 9;
             this.buttonDelete.Text = "Удалить";
             this.buttonDelete.UseVisualStyleBackColor = true;

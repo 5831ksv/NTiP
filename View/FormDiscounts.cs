@@ -34,14 +34,14 @@ namespace View
         private void UpdateDataGridView()
         {
             dataGridView.Rows.Clear();
-            for (int i = 0; i < Discount.Count; i++)
+            foreach (IDiscounts t in Discount) //
             {
                 DataGridViewRow row = new DataGridViewRow();
                 row.CreateCells(dataGridView);
-                if (Discount[i] is PercentDiscounts) { row.Cells[0].Value = "Процентная "; }
-                if (Discount[i] is CertificateDiscounts) { row.Cells[0].Value = "Сертификатная"; }
-                row.Cells[1].Value = Discount[i].ChosenDiscount;
-                row.Cells[2].Value = Discount[i].Discount;               
+                if (t is PercentDiscounts) { row.Cells[0].Value = "Процентная "; } //if название в интерфейс
+                if (t is CertificateDiscounts) { row.Cells[0].Value = "Сертификатная"; }
+                row.Cells[1].Value = t.ChosenDiscount;
+                row.Cells[2].Value = t.Discount;               
                 dataGridView.Rows.Add(row);
             }
         }

@@ -11,6 +11,7 @@ namespace Model
         public Exeption(string message)
             : base(message)
         {
+
         }
     }
 }
