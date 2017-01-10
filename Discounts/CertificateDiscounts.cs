@@ -1,41 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model
 {
     [Serializable]
     public class CertificateDiscounts : IDiscounts
     {
-        private double _costOfGoods;
+        private double _totalCost;
         private double _chosenDiscount;
         private double _summa;
-
-
-
-        public CertificateDiscounts(double _costOfGoods, double _chosenDiscount)
+        
+        public CertificateDiscounts(double totalCost, double chosenDiscount)
         {
 
-            if (_costOfGoods < 0)
+            if (totalCost < 0)
 
                 throw new ArgumentException("Должно быть больше нуля", "_costOfGoods");
 
-            if (_chosenDiscount < 0)
+            if (chosenDiscount < 0)
 
-                throw new ArgumentException("Должно быть больше нуля", "_chosenDiscount");
+                throw new ArgumentException("Должно быть больше нуля", "chosenDiscount");
 
-            this._chosenDiscount = _chosenDiscount;
-            this._costOfGoods = _costOfGoods;
+            _chosenDiscount = chosenDiscount;
+            _totalCost = totalCost;
 
-            if ((_costOfGoods - _chosenDiscount) < 0)
+            if ((totalCost - chosenDiscount) < 0)
             {
                 _summa = 0;
             }
            else
                {
-                _summa = _costOfGoods - _chosenDiscount;
+                _summa = totalCost - chosenDiscount;
                }
 
         }
@@ -55,6 +49,14 @@ namespace Model
             get
             {
                 return _chosenDiscount;
+            }
+        }
+
+        public double TotalCost
+        {
+            get
+            {
+                return _totalCost;
             }
         }
 

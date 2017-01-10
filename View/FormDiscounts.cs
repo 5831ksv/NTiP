@@ -40,7 +40,8 @@ namespace View
                 row.CreateCells(dataGridView);
                 if (t is PercentDiscounts) { row.Cells[0].Value = "Процентная "; } //if название в интерфейс
                 if (t is CertificateDiscounts) { row.Cells[0].Value = "Сертификатная"; }
-                row.Cells[1].Value = t.ChosenDiscount;
+                //   row.Cells[1].Value = t.ChosenDiscount;
+                row.Cells[1].Value = t.TypeDiscount;
                 row.Cells[2].Value = t.Discount;               
                 dataGridView.Rows.Add(row);
             }

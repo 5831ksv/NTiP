@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Model
 
@@ -10,23 +6,23 @@ namespace Model
     [Serializable]
     public class PercentDiscounts : IDiscounts
     {
-        public double _costOfGoods;
+        private double _totalCost;
+        private double _chosenDiscount;
 
-        public double _chosenDiscount;
 
-        public PercentDiscounts(double _costOfGoods, double _chosenDiscount)
+        public PercentDiscounts(double totalCost, double chosenDiscount)
         {
 
-            if (_chosenDiscount < 0 || _chosenDiscount > 1)
+            if (chosenDiscount < 0 || chosenDiscount > 1)
 
-               throw new ArgumentException("Должно быть от 0 до 1", "_chosenDiscount");
+               throw new ArgumentException("Должно быть от 0 до 1", "chosenDiscount");
 
 
-            if (_costOfGoods < 0)
+            if (totalCost < 0)
                 throw new ArgumentException("Не должно быть отрицательным", "_costOfGoods");
 
-            this._chosenDiscount = _chosenDiscount;
-            this._costOfGoods = _costOfGoods;
+            _totalCost = totalCost;
+            _chosenDiscount = chosenDiscount;
 
         }
 
@@ -35,7 +31,7 @@ namespace Model
 
            get
            {
-               return _costOfGoods - _costOfGoods * _chosenDiscount; 
+               return _totalCost - _totalCost * _chosenDiscount; 
            }
             
         }
@@ -46,7 +42,14 @@ namespace Model
             { return _chosenDiscount; }
         }
 
-        //будет возвращать "имя"
+        public double TotalCost
+        {
+            get
+            {
+                return _totalCost;
+            }
+        }
+
         public string TypeDiscount
         {
             get
