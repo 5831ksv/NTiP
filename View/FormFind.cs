@@ -17,7 +17,7 @@ namespace View
         {
             InitializeComponent();
         }
-        public List<IDiscounts> DiscountList { get; set; }
+        public List<IDiscounts> discountList { get; set; }
 
         private void buttonFind_Click(object sender, EventArgs e)
         {
@@ -26,33 +26,35 @@ namespace View
             {
                 findDiscount = Convert.ToDouble(textBoxPrice.Text.Replace(".", ","));
             }
-            if (DiscountList != null)
+            if (discountList != null)
             {
                 if (checkBoxPercent.Checked||checkBoxCertificate.Checked)
                 {
-                    foreach(var item in DiscountList)
+                    foreach(var objectDiscount in discountList)
                     {
-                        if ((item is PercentDiscounts) && (checkBoxPercent.Checked))
+                        if ((objectDiscount is PercentDiscounts) && (checkBoxPercent.Checked))
                         {
-                            if ((item.Discount==findDiscount)|| (textBoxPrice.Text == ""))
+                            if ((objectDiscount.Discount==findDiscount)|| (textBoxPrice.Text == ""))
                             {
                                 DataGridViewRow row = new DataGridViewRow();
                                 row.CreateCells(dataGridView1);
-                                row.Cells[0].Value = "Процентная";
-                                row.Cells[1].Value = item.ChosenDiscount;
-                                row.Cells[2].Value = item.Discount;
+                                row.Cells[0].Value = objectDiscount.TypeDiscount;
+                                row.Cells[1].Value = objectDiscount.Discount;
+                                row.Cells[2].Value = objectDiscount.IndicatedDiscount;
+                                row.Cells[3].Value = objectDiscount.TotalCost;
                                 dataGridView1.Rows.Add(row);
                             }
                         }
-                        if ((item is CertificateDiscounts) && (checkBoxCertificate.Checked))
+                        if ((objectDiscount is CertificateDiscounts) && (checkBoxCertificate.Checked))
                         {
-                            if ((item.Discount == findDiscount) || (textBoxPrice.Text == ""))
+                            if ((objectDiscount.Discount == findDiscount) || (textBoxPrice.Text == ""))
                             {
                                 DataGridViewRow row = new DataGridViewRow();
                                 row.CreateCells(dataGridView1);
-                                row.Cells[0].Value = "Сертификатная";
-                                row.Cells[1].Value = item.ChosenDiscount;
-                                row.Cells[2].Value = item.Discount;
+                                row.Cells[0].Value = objectDiscount.TypeDiscount;
+                                row.Cells[1].Value = objectDiscount.Discount;
+                                row.Cells[2].Value = objectDiscount.IndicatedDiscount;
+                                row.Cells[3].Value = objectDiscount.TotalCost;
                                 dataGridView1.Rows.Add(row);
                             }
                         }
@@ -60,6 +62,11 @@ namespace View
 
                 }
             }
+        }
+
+        private void buttonCloseEvent_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

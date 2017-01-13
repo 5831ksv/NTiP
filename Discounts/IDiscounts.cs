@@ -17,7 +17,7 @@ namespace Model
         /// <summary>
         /// Указанная скидка
         /// </summary>
-        double ChosenDiscount { get; }
+        double IndicatedDiscount { get; }
 
         /// <summary>
         /// Общая стоимость

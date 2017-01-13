@@ -30,18 +30,18 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPercent = new System.Windows.Forms.TabPage();
-            this.buttonCloseTabPerc = new System.Windows.Forms.Button();
+            this.ButtonCloseTabPerc = new System.Windows.Forms.Button();
             this.textBoxPercent = new System.Windows.Forms.TextBox();
             this.textBoxPrice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.buttonPercentCalculate = new System.Windows.Forms.Button();
+            this.ButtonPercentCalculate = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tabDiscount = new System.Windows.Forms.TabPage();
-            this.buttonCloseTabDisc = new System.Windows.Forms.Button();
+            this.ButtonCloseTabDisc = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.textBoxDiscountMarkdown = new System.Windows.Forms.TextBox();
-            this.buttonCalculate = new System.Windows.Forms.Button();
+            this.ButtonDiscountCalculate = new System.Windows.Forms.Button();
             this.textBoxPriceDiscount = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.tabPercent.SuspendLayout();
@@ -61,11 +61,11 @@
             // 
             // tabPercent
             // 
-            this.tabPercent.Controls.Add(this.buttonCloseTabPerc);
+            this.tabPercent.Controls.Add(this.ButtonCloseTabPerc);
             this.tabPercent.Controls.Add(this.textBoxPercent);
             this.tabPercent.Controls.Add(this.textBoxPrice);
             this.tabPercent.Controls.Add(this.label1);
-            this.tabPercent.Controls.Add(this.buttonPercentCalculate);
+            this.tabPercent.Controls.Add(this.ButtonPercentCalculate);
             this.tabPercent.Controls.Add(this.label2);
             this.tabPercent.Location = new System.Drawing.Point(4, 22);
             this.tabPercent.Name = "tabPercent";
@@ -75,15 +75,15 @@
             this.tabPercent.Text = "Процентная";
             this.tabPercent.UseVisualStyleBackColor = true;
             // 
-            // buttonCloseTabPerc
+            // ButtonCloseTabPerc
             // 
-            this.buttonCloseTabPerc.Location = new System.Drawing.Point(142, 63);
-            this.buttonCloseTabPerc.Name = "buttonCloseTabPerc";
-            this.buttonCloseTabPerc.Size = new System.Drawing.Size(89, 23);
-            this.buttonCloseTabPerc.TabIndex = 34;
-            this.buttonCloseTabPerc.Text = "Закрыть";
-            this.buttonCloseTabPerc.UseVisualStyleBackColor = true;
-            this.buttonCloseTabPerc.Click += new System.EventHandler(this.buttonCloseEvent_Click);
+            this.ButtonCloseTabPerc.Location = new System.Drawing.Point(142, 63);
+            this.ButtonCloseTabPerc.Name = "ButtonCloseTabPerc";
+            this.ButtonCloseTabPerc.Size = new System.Drawing.Size(89, 23);
+            this.ButtonCloseTabPerc.TabIndex = 34;
+            this.ButtonCloseTabPerc.Text = "Закрыть";
+            this.ButtonCloseTabPerc.UseVisualStyleBackColor = true;
+            this.ButtonCloseTabPerc.Click += new System.EventHandler(this.buttonCloseEvent_Click);
             // 
             // textBoxPercent
             // 
@@ -91,7 +91,7 @@
             this.textBoxPercent.Name = "textBoxPercent";
             this.textBoxPercent.Size = new System.Drawing.Size(36, 20);
             this.textBoxPercent.TabIndex = 33;
-            this.textBoxPercent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValidation_KeyPress);
+            this.textBoxPercent.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxValidation_KeyPress);
             // 
             // textBoxPrice
             // 
@@ -99,7 +99,7 @@
             this.textBoxPrice.Name = "textBoxPrice";
             this.textBoxPrice.Size = new System.Drawing.Size(89, 20);
             this.textBoxPrice.TabIndex = 32;
-            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValidation_KeyPress);
+            this.textBoxPrice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxValidation_KeyPress);
             // 
             // label1
             // 
@@ -111,16 +111,16 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Стоимость товара";
             // 
-            // buttonPercentCalculate
+            // ButtonPercentCalculate
             // 
-            this.buttonPercentCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonPercentCalculate.Location = new System.Drawing.Point(47, 63);
-            this.buttonPercentCalculate.Name = "buttonPercentCalculate";
-            this.buttonPercentCalculate.Size = new System.Drawing.Size(89, 23);
-            this.buttonPercentCalculate.TabIndex = 31;
-            this.buttonPercentCalculate.Text = "Рассчет";
-            this.buttonPercentCalculate.UseVisualStyleBackColor = true;
-            this.buttonPercentCalculate.Click += new System.EventHandler(this.buttonPercentCalculate_Click);
+            this.ButtonPercentCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonPercentCalculate.Location = new System.Drawing.Point(47, 63);
+            this.ButtonPercentCalculate.Name = "ButtonPercentCalculate";
+            this.ButtonPercentCalculate.Size = new System.Drawing.Size(89, 23);
+            this.ButtonPercentCalculate.TabIndex = 31;
+            this.ButtonPercentCalculate.Text = "Рассчет";
+            this.ButtonPercentCalculate.UseVisualStyleBackColor = true;
+            this.ButtonPercentCalculate.Click += new System.EventHandler(this.ButtonPercentCalculate_Click);
             // 
             // label2
             // 
@@ -134,11 +134,11 @@
             // 
             // tabDiscount
             // 
-            this.tabDiscount.Controls.Add(this.buttonCloseTabDisc);
+            this.tabDiscount.Controls.Add(this.ButtonCloseTabDisc);
             this.tabDiscount.Controls.Add(this.label7);
             this.tabDiscount.Controls.Add(this.label6);
             this.tabDiscount.Controls.Add(this.textBoxDiscountMarkdown);
-            this.tabDiscount.Controls.Add(this.buttonCalculate);
+            this.tabDiscount.Controls.Add(this.ButtonDiscountCalculate);
             this.tabDiscount.Controls.Add(this.textBoxPriceDiscount);
             this.tabDiscount.Location = new System.Drawing.Point(4, 22);
             this.tabDiscount.Name = "tabDiscount";
@@ -148,15 +148,15 @@
             this.tabDiscount.Text = "Сертификатная";
             this.tabDiscount.UseVisualStyleBackColor = true;
             // 
-            // buttonCloseTabDisc
+            // ButtonCloseTabDisc
             // 
-            this.buttonCloseTabDisc.Location = new System.Drawing.Point(142, 63);
-            this.buttonCloseTabDisc.Name = "buttonCloseTabDisc";
-            this.buttonCloseTabDisc.Size = new System.Drawing.Size(89, 23);
-            this.buttonCloseTabDisc.TabIndex = 35;
-            this.buttonCloseTabDisc.Text = "Закрыть";
-            this.buttonCloseTabDisc.UseVisualStyleBackColor = true;
-            this.buttonCloseTabDisc.Click += new System.EventHandler(this.buttonCloseEvent_Click);
+            this.ButtonCloseTabDisc.Location = new System.Drawing.Point(142, 63);
+            this.ButtonCloseTabDisc.Name = "ButtonCloseTabDisc";
+            this.ButtonCloseTabDisc.Size = new System.Drawing.Size(89, 23);
+            this.ButtonCloseTabDisc.TabIndex = 35;
+            this.ButtonCloseTabDisc.Text = "Закрыть";
+            this.ButtonCloseTabDisc.UseVisualStyleBackColor = true;
+            this.ButtonCloseTabDisc.Click += new System.EventHandler(this.buttonCloseEvent_Click);
             // 
             // label7
             // 
@@ -184,18 +184,18 @@
             this.textBoxDiscountMarkdown.Name = "textBoxDiscountMarkdown";
             this.textBoxDiscountMarkdown.Size = new System.Drawing.Size(89, 20);
             this.textBoxDiscountMarkdown.TabIndex = 27;
-            this.textBoxDiscountMarkdown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValidation_KeyPress);
+            this.textBoxDiscountMarkdown.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxValidation_KeyPress);
             // 
-            // buttonCalculate
+            // ButtonDiscountCalculate
             // 
-            this.buttonCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.buttonCalculate.Location = new System.Drawing.Point(47, 63);
-            this.buttonCalculate.Name = "buttonCalculate";
-            this.buttonCalculate.Size = new System.Drawing.Size(89, 23);
-            this.buttonCalculate.TabIndex = 25;
-            this.buttonCalculate.Text = "Рассчет";
-            this.buttonCalculate.UseVisualStyleBackColor = true;
-            this.buttonCalculate.Click += new System.EventHandler(this.buttonDiscountCalculate_Click);
+            this.ButtonDiscountCalculate.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ButtonDiscountCalculate.Location = new System.Drawing.Point(47, 63);
+            this.ButtonDiscountCalculate.Name = "ButtonDiscountCalculate";
+            this.ButtonDiscountCalculate.Size = new System.Drawing.Size(89, 23);
+            this.ButtonDiscountCalculate.TabIndex = 25;
+            this.ButtonDiscountCalculate.Text = "Рассчет";
+            this.ButtonDiscountCalculate.UseVisualStyleBackColor = true;
+            this.ButtonDiscountCalculate.Click += new System.EventHandler(this.ButtonDiscountCalculate_Click);
             // 
             // textBoxPriceDiscount
             // 
@@ -203,7 +203,7 @@
             this.textBoxPriceDiscount.Name = "textBoxPriceDiscount";
             this.textBoxPriceDiscount.Size = new System.Drawing.Size(89, 20);
             this.textBoxPriceDiscount.TabIndex = 26;
-            this.textBoxPriceDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxValidation_KeyPress);
+            this.textBoxPriceDiscount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TextBoxValidation_KeyPress);
             // 
             // FormAddMarkdown
             // 
@@ -226,17 +226,17 @@
         private System.Windows.Forms.TabControl tabControl;
         private System.Windows.Forms.TabPage tabPercent;
         private System.Windows.Forms.TabPage tabDiscount;
-        private System.Windows.Forms.Button buttonCalculate;
+        private System.Windows.Forms.Button ButtonDiscountCalculate;
         private System.Windows.Forms.TextBox textBoxDiscountMarkdown;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBoxPriceDiscount;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxPercent;
         private System.Windows.Forms.TextBox textBoxPrice;
-        private System.Windows.Forms.Button buttonPercentCalculate;
+        private System.Windows.Forms.Button ButtonPercentCalculate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button buttonCloseTabPerc;
-        private System.Windows.Forms.Button buttonCloseTabDisc;
+        private System.Windows.Forms.Button ButtonCloseTabPerc;
+        private System.Windows.Forms.Button ButtonCloseTabDisc;
     }
 }

@@ -6,7 +6,7 @@ namespace Model
     public class CertificateDiscounts : IDiscounts
     {
         private double _totalCost;
-        private double _chosenDiscount;
+        private double _indicatedDiscount;
         private double _summa;
         
         public CertificateDiscounts(double totalCost, double chosenDiscount)
@@ -20,7 +20,7 @@ namespace Model
 
                 throw new ArgumentException("Должно быть больше нуля", "chosenDiscount");
 
-            _chosenDiscount = chosenDiscount;
+            _indicatedDiscount = chosenDiscount;
             _totalCost = totalCost;
 
             if ((totalCost - chosenDiscount) < 0)
@@ -44,11 +44,11 @@ namespace Model
 
         }
 
-        public double ChosenDiscount
+        public double IndicatedDiscount
         {
             get
             {
-                return _chosenDiscount;
+                return _indicatedDiscount;
             }
         }
 

@@ -7,8 +7,7 @@ namespace Model
     public class PercentDiscounts : IDiscounts
     {
         private double _totalCost;
-        private double _chosenDiscount;
-
+        private double _indicatedDiscount;
 
         public PercentDiscounts(double totalCost, double chosenDiscount)
         {
@@ -22,7 +21,7 @@ namespace Model
                 throw new ArgumentException("Не должно быть отрицательным", "_costOfGoods");
 
             _totalCost = totalCost;
-            _chosenDiscount = chosenDiscount;
+            _indicatedDiscount = chosenDiscount;
 
         }
 
@@ -31,15 +30,15 @@ namespace Model
 
            get
            {
-               return _totalCost - _totalCost * _chosenDiscount; 
+               return _totalCost - _totalCost * _indicatedDiscount; 
            }
             
         }
 
-        public double ChosenDiscount
+        public double IndicatedDiscount
         {
             get
-            { return _chosenDiscount; }
+            { return _indicatedDiscount; }
         }
 
         public double TotalCost

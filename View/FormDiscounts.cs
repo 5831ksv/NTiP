@@ -15,16 +15,16 @@ namespace View
 {
     public partial class FormDiscounts : Form
     {
-        public List<IDiscounts> Discount = new List<IDiscounts>();
+        public List<IDiscounts> DiscountsList = new List<IDiscounts>();
         public FormDiscounts()
         {
             InitializeComponent();
         }
 
-        private void sertificate_Click(object sender, EventArgs e)
+        private void ButtonAddObject_Click(object sender, EventArgs e)
         {
             FormAddMarkdown addDiscount = new FormAddMarkdown();
-            addDiscount.DiscountList = Discount;
+            addDiscount.DiscountList = DiscountsList;
             addDiscount.ShowDialog();
         }
         private void FormDiscounts_Activated(object sender, EventArgs e)
@@ -33,50 +33,49 @@ namespace View
         }
         private void UpdateDataGridView()
         {
-            dataGridView.Rows.Clear();
-            foreach (IDiscounts t in Discount) //
+            DataGridView.Rows.Clear();
+            foreach (IDiscounts objectDiscount in DiscountsList) //
             {
                 DataGridViewRow row = new DataGridViewRow();
-                row.CreateCells(dataGridView);
-                if (t is PercentDiscounts) { row.Cells[0].Value = "Процентная "; } //if название в интерфейс
-                if (t is CertificateDiscounts) { row.Cells[0].Value = "Сертификатная"; }
-                //   row.Cells[1].Value = t.ChosenDiscount;
-                row.Cells[1].Value = t.TypeDiscount;
-                row.Cells[2].Value = t.Discount;               
-                dataGridView.Rows.Add(row);
+                row.CreateCells(DataGridView);
+                row.Cells[0].Value = objectDiscount.TypeDiscount;
+                row.Cells[1].Value = objectDiscount.Discount;               
+                DataGridView.Rows.Add(row);
             }
         }
 
-        private void buttonDelete_Click(object sender, EventArgs e)
+        private void ButtonDelete_Click(object sender, EventArgs e)
         {
+
             try
             {
-                foreach (DataGridViewRow row in dataGridView.SelectedRows)
+                foreach (DataGridViewRow row in DataGridView.SelectedRows)
                 {
-                    Discount.RemoveAt(row.Index);
+                    DiscountsList.RemoveAt(row.Index);
                 }
             }
-            catch (System.ArgumentOutOfRangeException)
+            catch (ArgumentOutOfRangeException)
             {
              //   MessageBox.Show("cant delete", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
             UpdateDataGridView();
         }
 
-        private void buttonFind_Click(object sender, EventArgs e)
+        private void ButtonFind_Click(object sender, EventArgs e)
         {
             FormFind addDiscount = new FormFind();
-            addDiscount.DiscountList = Discount;
+            addDiscount.discountList = DiscountsList;
             addDiscount.ShowDialog();
         }
 
-        private void buttonSave_Click(object sender, EventArgs e)
+        private void ButtonSave_Click(object sender, EventArgs e)
         {
-            if (Discount.Count != 0)
+            if (DiscountsList.Count != 0)
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.DefaultExt = "kekeke";
                 saveFileDialog.Filter = "Custom filename extension  (*.kekeke)|*.kekeke";
+
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {
                     try
@@ -85,7 +84,7 @@ namespace View
                         {
                             FileStream stream = (FileStream)saveFileDialog.OpenFile();
                             BinaryFormatter binaryFormatter = new BinaryFormatter();
-                            binaryFormatter.Serialize(stream, Discount);
+                            binaryFormatter.Serialize(stream, DiscountsList);
                             stream.Close();
                         }
                     }
@@ -101,11 +100,11 @@ namespace View
             }
         }
 
-        private void buttonLoad_Click(object sender, EventArgs e)
+        private void ButtonLoad_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();
             openFileDialog.InitialDirectory = "c:\\";
-            openFileDialog.Filter = "Custom filename extension  (*.kekeke)|*.kekeke";
+            openFileDialog.Filter = "Custom filename extension  (*.discounts)|*.discounts";
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
@@ -115,14 +114,14 @@ namespace View
                     if ((stream = (FileStream)openFileDialog.OpenFile()) != null)
                     {
                         BinaryFormatter binaryFormatter = new BinaryFormatter();
-                        Discount = (List<IDiscounts>)binaryFormatter.Deserialize(stream);
+                        DiscountsList = (List<IDiscounts>)binaryFormatter.Deserialize(stream);
                         stream.Close();
                         UpdateDataGridView();
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Ошибка: Не удалось открыть файл с диска. Что-то произошло: " + ex.Message);
+                    MessageBox.Show("Что-то пошло не так" + ex.Message);
                 }
             }
         }

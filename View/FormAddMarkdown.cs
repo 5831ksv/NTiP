@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Model;
 
@@ -19,46 +13,7 @@ namespace View
         }
         public List<IDiscounts> DiscountList { get; set; }
 
-        /*      private void textBoxPrice_Validadating(object sender, EventArgs e)
-              {
-                  try
-                  {
-                     double doubleValue=0;
-                      if (double.TryParse(textBoxPrice.Text, out doubleValue)) throw new Exeption("Цена должна быть задана числом!");
-                      if (doubleValue <= 0) throw new Exeption("Цена должна быть больше нуля.");
-                      if (double.TryParse(textBoxPrice.Text, out doubleValue)) throw new Exeption("Цена должна быть задана числом!");
-              }
-
-                  catch (FormatException)
-                  {
-                      MessageBox.Show("format exeption", "Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-                  }
-
-
-                  /*     catch (Exeption exFCircle)
-                       {
-                           Console.WriteLine("{0} Exception caught.", exFCircle);
-                       }
-
-              }*/
-
-        /*        private void textBoxPrice1_Validadating(object sender, EventArgs e)
-                {
-                    try
-                    {
-                        double doubleValue=0;
-                        if (double.TryParse(textBoxPrice1.Text, out doubleValue)) throw new Exeption("Цена должна быть задана числом!");
-                        if (doubleValue <= 0) throw new Exeption("Цена должна быть больше нуля.");
-                    }
-                    catch (Exeption exFCircle)
-                    {
-                        Console.WriteLine("{0} Exception caught.", exFCircle);
-                    }
-
-                }
-          */
-
-        private void textBoxValidation_KeyPress(object sender, KeyPressEventArgs e)
+        private void TextBoxValidation_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (Char.IsDigit(e.KeyChar)) return;
             if (e.KeyChar != (char)Keys.Back)
@@ -70,7 +25,7 @@ namespace View
             }
         }
 
-        private void buttonDiscountCalculate_Click(object sender, EventArgs e)
+        private void ButtonDiscountCalculate_Click(object sender, EventArgs e)
         {
             try
             {
@@ -87,13 +42,12 @@ namespace View
                   
         }
 
-        private void buttonPercentCalculate_Click(object sender, EventArgs e)
+        private void ButtonPercentCalculate_Click(object sender, EventArgs e)
         {
             try
             {
                 
                 double doubleValuePrice = Convert.ToDouble(textBoxPrice.Text.Replace(".", ","));
-
                 double doubleValuePercentTemp = Convert.ToDouble(textBoxPercent.Text.Replace(".", ","));
                 double doubleValuePercent = (doubleValuePercentTemp/100);
                 if (doubleValuePercent < 0 || doubleValuePercent > 1)
@@ -112,12 +66,10 @@ namespace View
                 
             }
 
-            catch (System.FormatException)
+            catch (FormatException)
             {
                 MessageBox.Show(@"Не все строки заполнены", @"Error", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-
-
 
         }
 
