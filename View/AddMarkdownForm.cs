@@ -5,9 +5,9 @@ using Model;
 
 namespace View
 {
-    public partial class FormAddMarkdown : Form
+    public partial class AddMarkdownForm : Form
     {
-      public FormAddMarkdown()
+      public AddMarkdownForm()
         {
             InitializeComponent();
         }

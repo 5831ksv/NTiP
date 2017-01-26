@@ -10,19 +10,11 @@ namespace Model
         double Discount { get; }
 
         /// <summary>
-        /// Указанная скидка
-        /// </summary>
-        double IndicatedDiscount { get; }
-
-        /// <summary>
-        /// Общая стоимость
-        /// </summary>
-        double TotalCost { get; }
-
-        /// <summary>
         /// Тип скидки
         /// </summary>
         string TypeDiscount { get; }
- 
+
+        double[] Parameter { get; }
+
     }
 }

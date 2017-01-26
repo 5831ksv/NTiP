@@ -1,6 +1,6 @@
 ﻿namespace View
 {
-    partial class FormAddMarkdown
+    partial class AddMarkdownForm
     {
         /// <summary>
         /// Required designer variable.

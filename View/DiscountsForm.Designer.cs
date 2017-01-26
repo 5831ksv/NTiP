@@ -1,6 +1,6 @@
 ﻿namespace View
 {
-    partial class FormDiscounts
+    partial class DiscountsForm
     {
         /// <summary>
         /// Обязательная переменная конструктора.

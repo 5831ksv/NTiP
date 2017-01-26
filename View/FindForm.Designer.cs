@@ -1,6 +1,6 @@
 ﻿namespace View
 {
-    partial class FormFind
+    partial class FindForm
     {
         /// <summary>
         /// Required designer variable.

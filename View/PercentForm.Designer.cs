@@ -1,6 +1,6 @@
 ﻿namespace View
 {
-    partial class FormPercent
+    partial class PercentForm
     {
         /// <summary>
         /// Required designer variable.

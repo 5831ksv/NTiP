@@ -8,22 +8,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Model;
 using System.Runtime.Serialization.Formatters.Binary;
+using Discounts;
 
 namespace View
 {
-    public partial class FormDiscounts : Form
+    public partial class DiscountsForm : Form
     {
         public List<IDiscounts> DiscountsList = new List<IDiscounts>();
-        public FormDiscounts()
+        public DiscountsForm()
         {
             InitializeComponent();
         }
 
         private void ButtonAddObject_Click(object sender, EventArgs e)
         {
-            FormAddMarkdown addDiscount = new FormAddMarkdown();
+            AddMarkdownForm addDiscount = new AddMarkdownForm();
             addDiscount.DiscountList = DiscountsList;
             addDiscount.ShowDialog();
         }
@@ -63,7 +63,7 @@ namespace View
 
         private void ButtonFind_Click(object sender, EventArgs e)
         {
-            FormFind addDiscount = new FormFind();
+            FindForm addDiscount = new FindForm();
             addDiscount.discountList = DiscountsList;
             addDiscount.ShowDialog();
         }
@@ -74,7 +74,7 @@ namespace View
             {
                 SaveFileDialog saveFileDialog = new SaveFileDialog();
                 saveFileDialog.DefaultExt = "kekeke";
-                saveFileDialog.Filter = "Custom filename extension  (*.kekeke)|*.kekeke";
+                saveFileDialog.Filter = "Custom filename extension  (*.discounts)|*.discounts";
 
                 if (saveFileDialog.ShowDialog() == DialogResult.OK)
                 {

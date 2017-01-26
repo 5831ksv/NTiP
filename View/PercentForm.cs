@@ -7,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Model;
+using Discounts;
 
 namespace View
 {
-    public partial class FormPercent : Form
+    public partial class PercentForm : Form
     {
-        public FormPercent()
+        public PercentForm()
         {
             InitializeComponent();
         }

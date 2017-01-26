@@ -25,7 +25,16 @@ namespace Model
 
         }
 
-       public double Discount
+        public double[] Parameter
+        {
+            get
+            {
+                double[] param = { _totalCost, _indicatedDiscount };
+                return param;
+            }
+        }
+
+        public double Discount
         {
 
            get
@@ -33,20 +42,6 @@ namespace Model
                return _totalCost - _totalCost * _indicatedDiscount; 
            }
             
-        }
-
-        public double IndicatedDiscount
-        {
-            get
-            { return _indicatedDiscount; }
-        }
-
-        public double TotalCost
-        {
-            get
-            {
-                return _totalCost;
-            }
         }
 
         public string TypeDiscount

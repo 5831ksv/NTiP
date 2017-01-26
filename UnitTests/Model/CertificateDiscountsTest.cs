@@ -1,6 +1,6 @@
 ﻿using System;
-using NUnit.Framework;
 using Model;
+using NUnit.Framework;
 
 namespace UnitTests.Model
 {

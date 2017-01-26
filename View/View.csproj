@@ -46,29 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormDiscounts.cs">
+    <Compile Include="DiscountsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDiscounts.Designer.cs">
-      <DependentUpon>FormDiscounts.cs</DependentUpon>
+    <Compile Include="DiscountsForm.Designer.cs">
+      <DependentUpon>DiscountsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormFind.cs">
+    <Compile Include="FindForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormFind.Designer.cs">
-      <DependentUpon>FormFind.cs</DependentUpon>
+    <Compile Include="FindForm.Designer.cs">
+      <DependentUpon>FindForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPercent.cs">
+    <Compile Include="PercentForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPercent.Designer.cs">
-      <DependentUpon>FormPercent.cs</DependentUpon>
+    <Compile Include="PercentForm.Designer.cs">
+      <DependentUpon>PercentForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormAddMarkdown.cs">
+    <Compile Include="AddMarkdownForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAddMarkdown.Designer.cs">
-      <DependentUpon>FormAddMarkdown.cs</DependentUpon>
+    <Compile Include="AddMarkdownForm.Designer.cs">
+      <DependentUpon>AddMarkdownForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ObjectControl.cs">
       <SubType>UserControl</SubType>
@@ -78,17 +78,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormDiscounts.resx">
-      <DependentUpon>FormDiscounts.cs</DependentUpon>
+    <EmbeddedResource Include="DiscountsForm.resx">
+      <DependentUpon>DiscountsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormFind.resx">
-      <DependentUpon>FormFind.cs</DependentUpon>
+    <EmbeddedResource Include="FindForm.resx">
+      <DependentUpon>FindForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPercent.resx">
-      <DependentUpon>FormPercent.cs</DependentUpon>
+    <EmbeddedResource Include="PercentForm.resx">
+      <DependentUpon>PercentForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormAddMarkdown.resx">
-      <DependentUpon>FormAddMarkdown.cs</DependentUpon>
+    <EmbeddedResource Include="AddMarkdownForm.resx">
+      <DependentUpon>AddMarkdownForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ObjectControl.resx">
+      <DependentUpon>ObjectControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
