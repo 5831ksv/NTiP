@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Discounts;
+using Model;
 
 namespace View
 {
@@ -40,8 +41,8 @@ namespace View
                                 row.CreateCells(dataGridView1);
                                 row.Cells[0].Value = objectDiscount.TypeDiscount;
                                 row.Cells[1].Value = objectDiscount.Discount;
-                                row.Cells[2].Value = objectDiscount.IndicatedDiscount;
-                                row.Cells[3].Value = objectDiscount.TotalCost;
+                            //    row.Cells[2].Value = objectDiscount.IndicatedDiscount;
+                             //   row.Cells[3].Value = objectDiscount.TotalCost;
                                 dataGridView1.Rows.Add(row);
                             }
                         }
@@ -53,8 +54,8 @@ namespace View
                                 row.CreateCells(dataGridView1);
                                 row.Cells[0].Value = objectDiscount.TypeDiscount;
                                 row.Cells[1].Value = objectDiscount.Discount;
-                                row.Cells[2].Value = objectDiscount.IndicatedDiscount;
-                                row.Cells[3].Value = objectDiscount.TotalCost;
+                            //    row.Cells[2].Value = objectDiscount.IndicatedDiscount;
+                            //    row.Cells[3].Value = objectDiscount.TotalCost;
                                 dataGridView1.Rows.Add(row);
                             }
                         }

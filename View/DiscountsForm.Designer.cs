@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.DataGridView = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ButtonAddObject = new System.Windows.Forms.Button();
             this.ButtonDelete = new System.Windows.Forms.Button();
             this.ButtonLoad = new System.Windows.Forms.Button();
             this.ButtonSave = new System.Windows.Forms.Button();
             this.ButtonFind = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -52,6 +52,16 @@
             this.DataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DataGridView.Size = new System.Drawing.Size(244, 193);
             this.DataGridView.TabIndex = 7;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Тип скидки";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Конечная стоимость";
+            this.Column2.Name = "Column2";
             // 
             // groupBox1
             // 
@@ -114,17 +124,7 @@
             this.ButtonFind.UseVisualStyleBackColor = true;
             this.ButtonFind.Click += new System.EventHandler(this.ButtonFind_Click);
             // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Тип скидки";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Конечная стоимость";
-            this.Column2.Name = "Column2";
-            // 
-            // FormDiscounts
+            // DiscountsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -134,7 +134,7 @@
             this.Controls.Add(this.ButtonLoad);
             this.Controls.Add(this.ButtonSave);
             this.Controls.Add(this.ButtonFind);
-            this.Name = "FormDiscounts";
+            this.Name = "DiscountsForm";
             this.Text = "FormDiscounts";
             this.Activated += new System.EventHandler(this.FormDiscounts_Activated);
             ((System.ComponentModel.ISupportInitialize)(this.DataGridView)).EndInit();
